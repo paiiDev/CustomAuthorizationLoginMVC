@@ -43,5 +43,11 @@ namespace CustomAuthorizationLoginMVC.Controllers
             return Redirect("/Home"); // Redirect to home page on successful login
         }
 
+        public IActionResult Logout()
+        {
+            HttpContext.Response.Cookies.Delete("Authorization");
+            return Redirect("/Login");
+        }
+
     }
 }

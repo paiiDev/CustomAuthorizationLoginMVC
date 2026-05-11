@@ -1,5 +1,6 @@
 using CustomAuthorizationLoginMVC.Database.DataAccess;
 using CustomAuthorizationLoginMVC.Domain.Features.Login;
+using CustomAuthorizationLoginMVC.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
 using Serilog;
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<LoginService>();
+builder.Services.AddHttpContextAccessor();
 
 
 
@@ -31,9 +33,12 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<CustomAuthMiddleware>();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
 
 app.UseAuthorization();
 
