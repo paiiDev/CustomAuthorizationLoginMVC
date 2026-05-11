@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div class="d-flex justify-content-center align-items-center">
+
+    <div class="w-25 text-center">
+        <form class="form-signin" action="/Login" method="post">
+            <h1 class="h3 my-5 font-weight-normal">Please log in</h1>
+            <input 
+                   type="text"
+                   name="username"
+                   class="form-control mb-3"
+                   placeholder="Username"
+                   required=""
+                   autofocus="">
+            <input 
+                   type="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Password"
+                   required="">
+            <div class="checkbox mb-3">
+                
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        </form>
+
+
+    </div>
+</div>
+

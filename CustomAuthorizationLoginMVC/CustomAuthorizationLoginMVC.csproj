@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0e14f3d7-e357-463a-89de-e56de2c5aacc</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="4.3.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomAuthorizationLoginMVC.Database\CustomAuthorizationLoginMVC.Database.csproj" />
+    <ProjectReference Include="..\CustomAuthorizationLoginMVC.Domain\CustomAuthorizationLoginMVC.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
